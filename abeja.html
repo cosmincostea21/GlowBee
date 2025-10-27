@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abeja Revoloteando</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .capa {
+            width: 400px;
+            height: 400px;
+            background-color: #FFF;
+            border: 3px solid #7B68EE;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .abeja {
+            width: 50px; /* Tamaño de la abeja */
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('abeja.png'); /* Ruta de la imagen de la abeja */
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: revoloteo 6s ease-in-out infinite;
+        }
+
+        @keyframes revoloteo {
+            0% {
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%) rotate(0deg);
+            }
+            25% {
+                top: 30%;
+                left: 60%;
+                transform: translateX(-50%) rotate(45deg);
+            }
+            50% {
+                top: 50%;
+                left: 80%;
+                transform: translateX(-50%) rotate(90deg);
+            }
+            75% {
+                top: 30%;
+                left: 60%;
+                transform: translateX(-50%) rotate(135deg);
+            }
+            100% {
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="capa">
+        <div class="abeja"></div>
+    </div>
+</body>
+</html>
